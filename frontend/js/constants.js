@@ -3,7 +3,7 @@ const chain = 'rinkeby'; // rinkeby or polygon
 
 const welcome_h1 = "Welcome to the Random Doujinshi NFT Project!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
-const welcome_p = 'The Random Doujinshi NFT Project is a proof of Concept project produced by Kryptiko.';
+const welcome_p = 'The Random Doujinshi NFT collection is a Proof of Concept project produced by Kryptiko.';
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!!";
