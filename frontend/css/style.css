@@ -361,35 +361,35 @@ section {
   width: 20vw;
 }
 
-/* COLLABORATION */
+/* BRAND */
 
-.collaboration {
+.brand {
   padding: 5rem 0;
   background: var(--accent-color);
   text-align: center;
   color: var(--bg-color);
 }
-.collaboration h1 {
+.brand h1 {
   text-shadow: 2px 2px 0 var(--font-color);
   font-style: italic;
   margin: 2rem 0;
   font-size: 3.5rem;
 }
-.collaboration p {
+.brand p {
   font-size: 1.1rem;
   line-height: 1.8;
   font-family: var(--font-secondary);
   margin: 1rem 0;
 }
-.collaboration blockquote {
+.brand blockquote {
   font-size: 1.1rem;
   font-weight: bold;
 }
-.collaboration .flex {
+.brand .flex {
   display: flex;
   align-items: center;
 }
-.collaboration span img {
+.brand span img {
   width: 20vw;
   margin-left: 1rem;
   box-shadow: 2px 2px 4px var(--font-color);;
