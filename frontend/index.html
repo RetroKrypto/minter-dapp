@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,6 +26,19 @@
       href="images/x-icon/favicon-16x16.png"
     />
     <link rel="manifest" href="images/x-icon/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/solid.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/brands.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/three-dots.min.css" />
     <link rel="stylesheet" href="css/splide.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -53,7 +67,7 @@
             <img src="images/header/twitter.webp" alt="Twitter" />
           </a>
           <a
-            href="https://opensea.io/collection/randomdoujinshi"
+            href="https://opensea.io/collection/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -66,151 +80,377 @@
       </div>
     </header>
 
-    <section class="container not-connected">
-      <div>
-        <h2 id="welcomeH2">Connect to MetaMask to Get Started</h2>
-        <h1 id="welcomeH1">Welcome to the CodeCats NFT Project!</h1>
-        <p id="welcomeP">
-          The CodeCats NFT Project is a decentralized, open-source project that aims to demonstrate how to develope and launch your own NFT Collection. Follow step by step on the <a href="https://youtube.com/codestackr"  target="_blank" rel="noopener noreferrer">codeSTACKr</a> YouTube channel.
-        </p>
-      </div>
-    </section>
+    <div class="main-wrapper">
+      <section class="container not-connected">
+        <div>
+          <h2 id="welcomeH2">Connect to MetaMask to Get Started</h2>
+          <h1 id="welcomeH1">Welcome to the Random Doujinshi NFT Project</h1>
+          <p id="welcomeP">
+           The Random Doujinshi NFT collection is a Proof of Concept project produced by
+            <a
+              href="https://kryptiko.net"
+              rel="noopener noreferrer"
+              class="kryptiko-link"
+              >Kryptiko</a
+            >
+          </p>
+          <br />
+          <button
+            id="connectWalletActionBtn"
+            class="hero-btn btn"
+            ><span>Connect to MetaMask!</span>
+          </butt>
+        </div>
+      </section>
 
-    <section class="container">
-      <div class="countdown card">
-        <div id="countdown">
-          <ul class="count-down" data-date="">
-            <li class="clock-item">
-              <span class="count-number days">20</span>
-              <p class="count-text">Days</p>
+      <section class="container countdown-container">
+        <div class="countdown card">
+          <div id="countdown">
+            <ul class="count-down" data-date="">
+              <li class="clock-item">
+                <span class="count-number days">20</span>
+                <p class="count-text">Days</p>
+              </li>
+
+              <li class="clock-item">
+                <span class="count-number hours">20</span>
+                <p class="count-text">Hour</p>
+              </li>
+
+              <li class="clock-item">
+                <span class="count-number minutes">20</span>
+                <p class="count-text">Min</p>
+              </li>
+
+              <li class="clock-item">
+                <span class="count-number seconds">20</span>
+                <p class="count-text">Sec</p>
+              </li>
+            </ul>
+            <h2 id="subHeading">Pre-Sale Countdown</h2>
+          </div>
+          <h1 id="mainHeading">NFT Drop Coming Soon!!</h1>
+          <p id="mainText">
+            A new batch of Random Doujinshi will be available very soon!
+          </p>
+          <a
+            id="actionButton"
+            href="https://discord.gg/TDeSSG3Z"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-btn btn"
+            ><span>Join the Community</span>
+          </a>
+          <div id="mintContainer" class="mint-container hidden">
+            <div class="info-container">
+              <div>
+                <h3>Supply</h3>
+                <p id="totalSupply">100</p>
+              </div>
+              <div>
+                <h3>Price Per Mint</h3>
+                <p id="pricePerMint">1 ETH</p>
+              </div>
+              <div>
+                <h3>Max</h3>
+                <p id="maxPerMint">5 per wallet</p>
+              </div>
+            </div>
+            <div class="mint-qty">
+              <span>
+                <button class="input-number-decrement btn" id="mintDecrement">
+                  –
+                </button>
+                <input
+                  id="mintInput"
+                  class="input-number btn"
+                  type="number"
+                  value="1"
+                  min="1"
+                  max="5"
+                />
+                <button class="input-number-increment btn" id="mintIncrement">
+                  +
+                </button>
+              </span>
+              <button id="setQtyMax" class="btn">SET MAX</button>
+            </div>
+            <div class="total-price-container">
+              <h3>Total</h3>
+              <p id="totalPrice">.001 ETH</p>
+            </div>
+            <button id="mintButton" class="hero-btn btn mint-btn">Mint</button>
+          </div>
+        </div>
+        <div class="minted-container card show-card hidden">
+          <h1>🚀</h1>
+          <h2>Minted!</h2>
+          <p>Here's your trasaction link:</p>
+          <a
+            id="mintedTxnBtn"
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="hero-btn btn">View Transaction</button>
+          </a>
+          <p>View it in the collection:</p>
+          <a
+            id="mintedLinkBtn"
+            href="https://opensea.io/collection/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="hero-btn btn">View Collection</button>
+          </a>
+        </div>
+      </section>
+
+      <div class="splide">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <img src="images/slider/0.webp" />
             </li>
-
-            <li class="clock-item">
-              <span class="count-number hours">20</span>
-              <p class="count-text">Hour</p>
+            <li class="splide__slide">
+              <img src="images/slider/1.webp" />
             </li>
-
-            <li class="clock-item">
-              <span class="count-number minutes">20</span>
-              <p class="count-text">Min</p>
+            <li class="splide__slide">
+              <img src="images/slider/2.webp" />
             </li>
-
-            <li class="clock-item">
-              <span class="count-number seconds">20</span>
-              <p class="count-text">Sec</p>
+            <li class="splide__slide">
+              <img src="images/slider/3.webp" />
+            </li>
+            <li class="splide__slide">
+              <img src="images/slider/4.webp" />
+            </li>
+            <li class="splide__slide">
+              <img src="images/slider/5.webp" />
+            </li>
+            <li class="splide__slide">
+              <img src="images/slider/6.webp" />
+            </li>
+            <li class="splide__slide">
+              <img src="images/slider/7.webp" />
+            </li>
+            <li class="splide__slide">
+              <img src="images/slider/8.webp" />
             </li>
           </ul>
-          <h2 id="subHeading">Pre-Sale Countdown</h2>
-        </div>
-        <h1 id="mainHeading">NFT Drop Coming Soon!!</h1>
-        <p id="mainText">
-          A new batch of cute cats will be available very soon!
-        </p>
-        <a
-          id="actionButton"
-          href="https://discord.gg/A9CnsVzzkZ"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hero-btn btn"
-          ><span>Join the Catmmunity</span>
-        </a>
-        <div id="mintContainer" class="mint-container hidden">
-          <div class="info-container">
-            <div>
-              <h3>Supply</h3>
-              <p id="totalSupply">100</p>
-            </div>
-            <div>
-              <h3>Price Per Mint</h3>
-              <p id="pricePerMint">1 ETH</p>
-            </div>
-            <div>
-              <h3>Max</h3>
-              <p id="maxPerMint">5 per wallet</p>
-            </div>
-          </div>
-          <div class="mint-qty">
-            <span>
-              <button class="input-number-decrement btn" id="mintDecrement">–</button>
-              <input
-                id="mintInput"
-                class="input-number btn"
-                type="number"
-                value="1"
-                min="1"
-                max="5"
-              />
-              <button class="input-number-increment btn" id="mintIncrement">+</button>
-            </span>
-            <button id="setQtyMax" class="btn">SET MAX</button>
-          </div>
-          <div class="total-price-container">
-            <h3>Total</h3>
-            <p id="totalPrice">.001 ETH</p>
-          </div>
-          <button id="mintButton" class="hero-btn btn mint-btn">Mint</button>
         </div>
       </div>
-      <div class="minted-container card show-card hidden">
-        <h1>🎉</h1>
-        <h2>Minted!</h2>
-        <p>Here's your trasaction link:</p>
-        <a id="mintedTxnBtn" href="" target="_blank" rel="noopener noreferrer">
-          <button class="hero-btn btn">View Transaction</button>
-        </a>
-        <p>View it in the collection:</p>
-        <a
-          id="mintedLinkBtn"
-          href="https://testnets.opensea.io/collection/teststackr-collection"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button class="hero-btn btn">View Collection</button>
-        </a>
+    </div>
+
+    <section class="brand">
+      <div class="container">
+        <h1>Our Brand</h1>
+	<p><strong>Random Doujinshi</strong> is a proof of concept project collaborated by two brother-in-laws - David & Edward.  The tried and test blend of one disruptive innovator (David), and a talented marketer (Edward) will provide the knowledge and expertise to develop futher projects.</p>
+        <p><strong>Kryptiko/strong> is a decentralised luxury lifestyle brand based in the UK. Our mission is to deliver a variety of NFT projects, transmedia games, investigative challenges along with opportunities for travel and adventure. Our core NFT collection, The Debonair Cavaliers, transforms mediocrity into an epic and inclusive luxury experience for all our members. Our education platform and immersive escapades will provide leadership training and life skills to survive and thrive in a rapidly changing world.</p>
+        <div class="flex">
+	<h2>Business Model</h2>
+      <h3>Investment DAO</h3>
+		<p>A tokenised, multi-sig investment circle provides a profit share utility to holders of our NFT.</p> 
+	<h3>NFT Collection</h3>
+		<p>Through this brazen lust for life, we will build the Debonair Cavalier brand through real-world partnerships and utilities that will consistently benefit our community and the world as a whole.</p>
+	<h3>Gamified Education (Power, Wealth & Influence)</h3>
+		<p>A social learning platform available to the public as online coursework or complimentary to NFT Holders.</p>
+	<h3>Luxury Lifestyle Consultation</h3>
+		<p>Exclusively available to high net worth individuals our bespoke consultation service enables entrepreneurs and investors to develop a strategic outline to protect and grow wealth internationally. This service is heavily discounted for our members.</p>
+        <blockquote>- "Fear no one, regret nothing, embrace everything.!"</p></blockquote>
+        <div class="collabs">
+          <a href="https://kryptiko.nft" target="_blank" rel="noopener noreferrer" class="collab">
+            <img src="images/collab/kryptiko.png" alt="codeSTACKr" />
+            <h2>Kryptiko</h2>
+          </a>
+          <a href="https://kryptiko.net/nftprojects" target="_blank" rel="noopener noreferrer" class="collab">
+            <img src="images/collab/dcnft.png" alt="Be The Bird" />
+            <h2>The Debonair Cavaliers</h2>
+          </a>
+        </div>
       </div>
     </section>
 
-    <div id="spinner" class="dot-spin"></div>
+    <section>
+      <div class="splide-2">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <img src="images/divider/3182.png" />
+            </li>
+            <li class="splide__slide">
+              <img src="images/divider/3185.png" />
+            </li>
+            <li class="splide__slide">
+              <img src="images/divider/3250.png" />
+            </li>
+            <li class="splide__slide">
+              <img src="images/divider/3384.png" />
+            </li>
+            <li class="splide__slide">
+              <img src="images/divider/3305.png" />
+            </li>
+            <li class="splide__slide">
+              <img src="images/divider/3384.png" />
+            </li>
+            <li class="splide__slide">
+              <img src="images/divider/3307.png" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <div class="splide">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">
-            <img src="images/slider/0.png" />
+    <div class="container roadmap">
+      <h1>Roadmap</h1>
+    </div>
+    <div class="wrapper">
+      <div class="center-line">
+        <a href="#" class="scroll-down"><i class="fas fa-claret-up"></i></a>
+      </div>
+      <div class="row row-1" data-aos="fade-right" data-aos-offset="200">
+        <section>
+          <i class="icon fa-solid fa-egg"></i>
+          <div class="details">
+            <span class="title">Discord Community</span>
+            <span>March 23, 2022</span>
+          </div>
+          <p>
+            Jump on our Discord <stong>today!</strong> If you are here you are already very early. Every waitlisted address will recieve a Debonair Cavalier whitelist spot. That means you can get an NFT with a launch price of 1000 MATIC for <strong>just 5 MATIC.</strong>
+          </p>
+          <div class="bottom">
+            <a href="https://discord.gg/TDeSSG3Z" target="_blank" rel="noopener noreferrer">Get Waitlisted!</a>
+          </div>
+        </section>
+      </div>
+      <div class="row row-2" data-aos="fade-left" data-aos-offset="200">
+        <section>
+          <i class="icon fa-brands fa-earlybirds"></i>
+          <div class="details">
+            <span class="title">Pre-Sale</span>
+            <span>Date TBA, 2022</span>
+          </div>
+          <p>
+           <strong>500</strong> Random Doujinshi NFT's are made avaliable as a pre-sale opportunity for those that made the whitelist.</p>
+        </section>
+      </div>
+      <div class="row row-1" data-aos="fade-right" data-aos-offset="200">
+        <section>
+          <i class="icon fa-solid fa-shopping-cart"></i>
+          <div class="details">
+            <span class="title">Public Sale</span>
+            <span>Date TBA, 2022</span>
+          </div>
+          <p>
+            Public sale starts. No waitlist needed. Mint away! Holders will then get another WL spot for the Debonair Cavaliers
+          </p>
+        </section>
+      </div>
+      <div class="row row-2" data-aos="fade-left" data-aos-offset="200">
+        <section>
+          <i class="icon fa-solid fa-gift"></i>
+          <div class="details">
+            <span class="title">Giveaway</span>
+            <span>25%</span>
+          </div>
+          <p>
+            DC NFT Art preview and sneek peeks of utilities
+          </p>
+        </section>
+      </div>
+      <div class="row row-1" data-aos="fade-right" data-aos-offset="200">
+        <section>
+          <i class="icon fa-solid fa-toolbox"></i>
+          <div class="details">
+            <span class="title">The Escapades Begin</span>
+            <span>50%</span>
+          </div>
+          <p>
+            Community building with giveaways treasure hunts, raids and other challenges
+          </p>
+        </section>
+      </div>
+      <div class="row row-2" data-aos="fade-left" data-aos-offset="200">
+        <section>
+          <i class="icon fas fa-paper-plane"></i>
+          <div class="details">
+            <span class="title">Investment DAO</span>
+            <span>75%</span>
+          </div>
+          <p>
+            Investment group activated with legendary DC airdrops.
+          </p>
+        </section>
+      </div>
+      <div class="row row-1" data-aos="fade-right" data-aos-offset="200">
+        <section>
+          <i class="icon fa-solid fa-store"></i>
+          <div class="details">
+            <span class="title">Merch Store</span>
+            <span>100%</span>
+          </div>
+          <p>
+            Merch store opens and 10 random holders get $100 to spend.
+          </p>
+        </section>
+      </div>
+      <div class="roadmap-v2" data-aos="fade-up" data-aos-offset="200">
+        <p>Roadmap v2 Coming!</p>
+      </div>
+    </div>
+
+    <section class="faq">
+      <div class="container">
+        <h1>FAQ</h1>
+        <ul>
+          <li>
+            <input type="checkbox" checked>
+            <i></i>
+            <h2>What Are The Benefits of Owning a <strong>Random</strong>?</h2>
+            <p>Owning a <strong>Random Doujinshi</strong> means love to support projects that want to make a differnce. As an owner, you will receive a whitelist stop ready for pre-sale of the Debonair Cavaliers. More utility will be intruduced in the Roadmap v2.</p>
           </li>
-          <li class="splide__slide">
-            <img src="images/slider/1.png" />
+          <li>
+            <input type="checkbox" checked>
+            <i></i>
+            <h2>What Chain do <strong>Random Doujinshi</strong> live on?</h2>
+            <p>Polygon. The <a href="https://polygon.technology/" target="_blank" rel="noopener noreferrer">Polygon</a> chain is a layer 2 Ethereum chain and provides greatly reduced gas fees.</p>
           </li>
-          <li class="splide__slide">
-            <img src="images/slider/2.png" />
+          <li>
+            <input type="checkbox" checked>
+            <i></i>
+            <h2>What Is The Mint Price?</h2>
+            <p>5 MATIC.<br>To get MATIC on the Polygon chain, use your favorite exchange such as <a href="https://transak.com/" target="_blank" rel="noopener noreferrer">Transak</a>.</p>
           </li>
-          <li class="splide__slide">
-            <img src="images/slider/3.png" />
+          <li>
+            <input type="checkbox" checked>
+            <i></i>
+            <h2>How Long Will The Pre-Sale Last?</h2>
+            <p>Waitlisting starts <strong>Date TBA, 2022</strong>.<br>Pre-Sale starts <strong>Date TBA, 2022 at 2:00 PM UTC</strong>.<br>Pubic Sale starts <strong>Date TBA, 2022 at 2:00 PM UTC</strong></p>
           </li>
-          <li class="splide__slide">
-            <img src="images/slider/4.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/5.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/6.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/7.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/8.png" />
+          <li>
+            <input type="checkbox" checked>
+            <i></i>
+            <h2>Which Marketplace Will <strong>Random Doujinshi</strong> Be Listed On?</h2>
+            <p>Once your <strong>Random Doujinshi</strong> is minted, it will be listed on OpenSea under the <a href="https://opensea.io/collection/" target="_blank" rel="noopener noreferrer">Random Doujinshi</a> Collection.</p>
           </li>
         </ul>
       </div>
-    </div>
+    </section>
+
+    <footer>Copyright &copy; Kryptiko 2022</footer>
+
+    <div id="spinner" class="dot-spin"></div>
 
     <script src="js/metamask-onboarding.bundle.js"></script>
     <script src="js/web3.min.js"></script>
     <script src="js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/constants.js"></script>
     <script src="js/countdown.js"></script>
     <script src="js/app.js"></script>
+    <script>
+      AOS.init({
+        disable: 'phone'
+      });
+    </script>
   </body>
 </html>
